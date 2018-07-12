@@ -6,7 +6,7 @@ export class Start extends Component {
         super(props)
         this.state = {
             email:'',
-            password:'',
+            password:''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -43,6 +43,9 @@ export class Start extends Component {
                 window.location="/";
             }
             
+        })
+        .catch(function(err){
+            console.log(err);
         });
     }
 

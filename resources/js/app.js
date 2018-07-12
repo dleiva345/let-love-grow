@@ -32,8 +32,8 @@ export class App extends Component {
             password: data.password,
             first_name: data.first_name,
             last_name: data.last_name,
-            birthday: data.birthday,
-            anniversary: data.anniversary,
+            birthday: data.birthday.substring(0,10),
+            anniversary: data.anniversary.substring(0,10),
             photo: data.photo,
             photo_couple:data.photo_couple,
             login: true
@@ -48,9 +48,6 @@ export class App extends Component {
         }
     }
 
-    // <Route exact path='/' component={Start} />
-    //<Route exact path='/' render={ (props) => <Start onUpdate={this.onUpdate} />} />
-
     render(){
         return (
             <Router>
@@ -58,7 +55,16 @@ export class App extends Component {
                 {this.isLoginSuccess()}
                 <Switch>
                     <Route exact path='/' render={ (props) => <Start onUpdate={this.onUpdate} />} />
-                    <Route exact path='/mypage' component={Mypage} />
+                    <Route exact path='/mypage' render={ (props) => <Mypage couple_key={this.state.couple_key}
+                                                                            email={this.state.email}
+                                                                            password={this.state.password}
+                                                                            first_name={this.state.first_name}
+                                                                            last_name={this.state.last_name}
+                                                                            birthday={this.state.birthday}
+                                                                            anniversary={this.state.anniversary}
+                                                                            photo={this.state.photo}
+                                                                            photo_couple={this.state.photo_couple}  
+                                                                            {...props}/>} />
                     <Route exact path='/signup' component ={Signup} />
                     <Route path='*' component ={Whoops404} />
                 </Switch>

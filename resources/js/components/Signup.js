@@ -35,23 +35,23 @@ export class Signup extends Component {
                     </div>
 
                     <div className="form-group row">
-                        <label htmlFor="inputCoupleID" className="col-sm-2 col-form-label">Couple ID</label>
+                        <label htmlFor="inputCoupleID" className="col-sm-2 col-form-label">Couple Key</label>
                         <div className="col-sm-10">
-                          <input type="text" className="form-control" id="inputCoupleID" name="coupleID" placeholder="If your partner has one..."></input>
+                          <input type="text" className="form-control" id="inputCoupleID" name="coupleKey" placeholder="If your partner has one..."></input>
                         </div>
                     </div>
 
                     <div className="form-group row">
                         <label htmlFor="inputBirthday" className="col-sm-2 col-form-label">Birthday</label>
                         <div className="col-sm-10">
-                          <input type="date" className="form-control" id="inputBirthday" name="birthday" placeholder="Birthday"></input>
+                          <input type="date" className="form-control" id="inputBirthday" name="birthday" placeholder="2018-01-01"></input>
                         </div>
                     </div>
             
                     <div className="form-group row">
                         <label htmlFor="inputAnniversary" className="col-sm-2 col-form-label">Anniversary</label>
                         <div className="col-sm-10">
-                          <input type="date" className="form-control" id="inputAnniversary" name="anniversary" placeholder="Anniversary"></input>
+                          <input type="date" className="form-control" id="inputAnniversary" name="anniversary" placeholder="2018-01-01"></input>
                         </div>
                     </div>
             
