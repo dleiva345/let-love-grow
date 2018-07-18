@@ -15,16 +15,31 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.js"></script>
-        
+
 
     </head>
 
     <body>
 
-        <div class = 'container' id="root">Loading...</div>
-        <script src="/socket.io/socket.io.js"></script>
-        <script type="text/babel" src="./bundle.js"></script>
+        <div class = 'container' id="root">
+            <!-- Login page-->
+            <form class = 'mb-5 col-6 offset-3'>
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
 
+            
+            <div class='col-6 offset-3'>
+                <p>If you don't have an account...</p>
+                <button type="submit" class="btn btn-primary">Signup</button>
+            </div>
+        </div>
     </body>
-
 </html>

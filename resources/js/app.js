@@ -42,7 +42,8 @@ export class App extends Component {
 
     isLoginSuccess = () => {
         if (this.state.login) {
-            return <Redirect to='/mypage' />
+            var url = "/mypage/" + this.state.couple_key
+            return <Redirect to={url} />
         } else {
             return <Redirect to='' />
         }
@@ -55,7 +56,7 @@ export class App extends Component {
                 {this.isLoginSuccess()}
                 <Switch>
                     <Route exact path='/' render={ (props) => <Start onUpdate={this.onUpdate} />} />
-                    <Route exact path='/mypage' render={ (props) => <Mypage couple_key={this.state.couple_key}
+                    <Route path={'/mypage/'+ this.state.couple_key} render={ (props) => <Mypage couple_key={this.state.couple_key}
                                                                             email={this.state.email}
                                                                             password={this.state.password}
                                                                             first_name={this.state.first_name}

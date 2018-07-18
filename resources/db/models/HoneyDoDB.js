@@ -1,23 +1,23 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
-var MsgSchema = new Schema({
+var HoneyDoSchema = new Schema({
   couple_key: {
     type: String,
     required: true
   },
-  date: {
-    type: Date,
+  task: {
+    type: String,    
     required: true
   },
-  poster: {
+  assigned_to: {
     type: String,
     required: true
   },
-  msg: {
-    type: String,    
+  due_date: {
+    type: Date,
     required: true
   }
 });
 
-var Msg = mongoose.model("Msg", MsgSchema);
-module.exports = Msg;
+var HoneyDo = mongoose.model("HoneyDo", HoneyDoSchema);
+module.exports = HoneyDo;

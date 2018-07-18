@@ -30,9 +30,21 @@ module.exports = {
       },
       {
 				test: /\.css$/,
-				exclude: /(node_modules)/,
 				loader: "style-loader!css-loader!autoprefixer-loader"
-			}
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+              'file-loader',
+              {
+              loader: 'image-webpack-loader',
+              options: {
+                        bypassOnDebug: true, // webpack@1.x
+                        disable: true, // webpack@2.x and newer
+                      },
+              },
+            ],
+      }
     ]
   },
   // This lets us debug our react code in chrome dev tools. Errors will have lines and file names
