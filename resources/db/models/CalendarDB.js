@@ -12,10 +12,6 @@ var CalendarSchema = new Schema({
   date: {
     type: Date,
     required: true
-  },
-  time: {
-    type: Date,
-    required: true
   }
 });
 

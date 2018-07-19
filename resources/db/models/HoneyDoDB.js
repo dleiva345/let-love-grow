@@ -5,16 +5,8 @@ var HoneyDoSchema = new Schema({
     type: String,
     required: true
   },
-  task: {
+  honey_do: {
     type: String,    
-    required: true
-  },
-  assigned_to: {
-    type: String,
-    required: true
-  },
-  due_date: {
-    type: Date,
     required: true
   }
 });

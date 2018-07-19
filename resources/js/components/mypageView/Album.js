@@ -2,7 +2,8 @@ import React from 'react'
 
 export const Album = ({couple_key, albums, last_one, fetchAlbum}) => (
     <div id='album'>
-      <div className='card-header p-2 border mt-1' data-toggle="modal" data-target="#albumModal">Album (click here to add)</div>
+    
+      <div className='card-header p-2 border mt-1 d-flex justify-content-between'  data-toggle="modal" data-target="#albumModal"> <div>Album</div><div className="btn btn-sm btn-primary text-white">add</div></div>
 
         <div className="modal fade" id="albumModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-lg" role="document">
@@ -16,7 +17,7 @@ export const Album = ({couple_key, albums, last_one, fetchAlbum}) => (
             
             <div className="modal-body">
 
-                                <form action='/albumUpload' method='POST'>
+                            <form action='/albumUpload' method='POST'>
                                 <small className="form-text text-muted">*required</small>
 
                                 <div className="form-group row" >
@@ -55,7 +56,7 @@ export const Album = ({couple_key, albums, last_one, fetchAlbum}) => (
                                 <div className="modal-dialog modal-dialog-centered" role="document">
                                     <div className="modal-content">
                                         <div className="modal-header">
-                                            <h5 className="modal-title" id="exampleModalLabel">Album uploading is processed!</h5>
+                                            <h5 className="modal-title" id="exampleModalLabel">Photo uploading is processed!</h5>
                                             <button onClick={() => {fetchAlbum(couple_key)}} type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>

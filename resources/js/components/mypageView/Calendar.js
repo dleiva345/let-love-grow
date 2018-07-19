@@ -32,9 +32,9 @@ export const Calendar = ({couple_key, calendars, fetchCalendar}) => (
                         <small className="form-text text-muted">Required*</small>
                         
                         <div className="form-group row">
-                            <label htmlFor="inputDescription" className="col-sm-2 col-form-label">Event*</label>
+                            <label htmlFor="inputEvent" className="col-sm-2 col-form-label">Event*</label>
                             <div className="col-sm-10">
-                            <input type="text" className="form-control" id="inputDescription" name="descr" placeholder="Description"></input>
+                            <input type="text" className="form-control" id="inputEvent" name="event" placeholder="Event Name"></input>
                             </div>
                         </div>
 
@@ -45,13 +45,14 @@ export const Calendar = ({couple_key, calendars, fetchCalendar}) => (
                             </div>
                         </div>
 
-                        <div className="form-group row">
-                            <label htmlFor="inputDate" className="col-sm-2 col-form-label">Time*</label>
+                         <div className="form-group row">
+                            <label htmlFor="inputTime" className="col-sm-2 col-form-label">Time*</label>
                             <div className="col-sm-10">
-                            <input type="date" className="form-control" id="inputDate" name="time" placeholder="HH:MM"></input>
+                            <input type="time" className="form-control" id="inputTime" name="time" placeholder="HH:MM"></input>
                             </div>
                         </div>
 
+                        
                         <div className="form-group row" >
                             <div className="col-sm-10">
                             <input type="hidden" className="form-control" id="inputCoupleKey" name="couple_key" value={couple_key}></input>

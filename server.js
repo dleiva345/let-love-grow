@@ -1,3 +1,8 @@
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() +1;
+var yyyy = today.getFullYear();
+
 var express = require("express");
 var app = express();
 
@@ -63,6 +68,7 @@ mongoose.connect(mongoDBUrl, function(error)
 
 const Album = require('./resources/db/models/AlbumDB.js');
 const History = require('./resources/db/models/HistoryDB.js');
+const HoneyDo = require('./resources/db/models/HoneyDoDB.js')
 
 
 /////////////////////////////////////////////////
@@ -211,9 +217,9 @@ app.post('/album', function(req, res){
 app.post('/historyAdd', function(req,res){
     var couple_key = JSON.stringify(req.body.couple_key);
     var newEvent = {
-        couple_key: couple_key,
-        event: req.body.event,
-        date: req.body.date + " " + req.body.time + ":00.000Z"   
+        'couple_key': couple_key,
+        'event': req.body.event,
+        'date': req.body.date  
     }
 
     History.create(newEvent, function(err, results){
@@ -223,7 +229,63 @@ app.post('/historyAdd', function(req,res){
 		console.log("New event Added");
     })
 })
+
+
+app.post('/history', function(req, res){
+    var couple_key = JSON.stringify(req.body.couple_key);
+    var thisMonth = parseInt(req.body.month)
+    History.find({'couple_key': couple_key, 'date': {"$gte": new Date(2018,thisMonth),"$lt": new Date(2018,thisMonth+1)}}, function(err, results){
+        if (err) {
+            console.log(err);
+        }
+        res.send(results)
+    })
+})
+
+
 /////////////////////////////////////////////////////////////////////
+
+
+//////honey Do////////////////////////
+app.post('/honeydoDelete/:id', function(req,res){
+    HoneyDo.remove({'_id' : req.params.id})
+    .exec(function(err, data){
+		if(err){
+			console.log(err);
+		} else {
+            console.log("HoneyDo item is deleted");
+            res.send(data)
+        }
+	});    
+})
+
+app.post('/honeydoAdd', function(req,res){
+    var couple_key = JSON.stringify(req.body.couple_key);
+    var newHoneyDo = {
+        couple_key: couple_key,
+        honey_do: req.body.honey_do 
+    }
+
+    HoneyDo.create(newHoneyDo, function(err, results){
+        if(err) {
+            console.log(err)
+        }
+		console.log("New Todo item Added");
+    })
+})
+
+app.post('/honeyDo', function(req, res){
+    var couple_key = JSON.stringify(req.body.couple_key);
+
+    HoneyDo.find({'couple_key': couple_key}, function(err, results){
+        if (err) {
+            console.log(err);
+        }
+        res.send(results)
+    })
+})
+//////////////////////////////////
+
 
 // Default route.
 app.use('/', function (req, res) {
