@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Logo from '../../../images/logo.png'
+import Logo from '../../../images/logo2.png'
 
 export const Nav = ({photo_couple}) => (
     <div id='nav'>
-        <nav className="navbar navbar-light bg-light border">
+        <nav className="navbar navbar-light bg-primary border">
             <span className="navbar-brand mb-0 h1"><img src={Logo} height="50px"></img></span>
             
-            <div className='d-flex justify-content-end'><a href="/">Logout</a><img src={photo_couple} height="40px" style={{"borderRadius": "50%", "width":"30px"}}></img></div>
+            <div className='d-flex justify-content-end'><a className="text-white" href="/">Logout</a></div>
         </nav>
     </div>
 )

@@ -6,10 +6,10 @@ import { Album } from './mypageView/Album'
 import { Messages } from './mypageView/Messages'
 import { History } from './mypageView/History'
 import { HoneyDo } from './mypageView/HoneyDo'
+import { Mood } from './mypageView/Mood'
 import Calendar from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import io from 'socket.io-client'
-
 
 
 export class Mypage extends Component {
@@ -28,61 +28,89 @@ export class Mypage extends Component {
             photo_couple: this.props.photo_couple,
             last_one:[],
             albums: [],
-            socket_url: 'http://localhost:3000/mypage/' + this.props.couple_key,
+            socket_url: 'http://localhost:3000',
             //socket_url: '--heroku address url' + this.props.couple_key,
-            messages:["Tigger: Test\n Pooh: trial\n"],
+            messages:'<p>Messenger is ready!</p>',
             message:'',
             events:{},
-            thisMonth: new Date().getMonth(),
+            feelings:['happy','smile','tongue','sad','wink','grin','cool','angry','evil','shocked','baffled','confused','neutral','hipster','wondering','sleepy','frustrated','crying'],
+            mood_me:'',
+            mood_partner:'',
             honey_dos:[],
-            honey_do:''
+            honey_do:'',
+            thisMonth: new Date().getMonth()
         }
 
+        console.log(this.state.socket_url, props.couple_key)
         //establish socket.io connection (client side)
-        this.socket = io(this.state.socket_url)
-        this.socket.on('receive_message', (msg)=> {
-            addMessage(msg)
-        })
-         
-        const addMessage = msg => {
-            console.log(msg);
-            this.setState({messages: [...this.state.messages, msg]});
-            console.log(this.state.messages);
-        }
-            
-        this.handleMessenger = event => {
-            event.preventDefault();
-            var data = {name:this.state.first_name, message: this.state.message};
-            this.socket.emit('send_message', data);
-            
-            //for test only
-            var current = new Date();
-            var hr = current.getHours();
-            var min = current.getMinutes();
-            if (min < 10) {
-                min = "0" + min;
+        this.socket = io(this.state.socket_url, {
+            query: {
+              couple_key: props.couple_key
             }
-            var currentTime = hr + ":" + min;
-            var msg = data.name + ' : ' + data.message + '\t\t\t\t' + currentTime + '\n';
-            this.setState({messages: [...this.state.messages, msg]});
-            ////////////////
-            this.setState({message: ''});
-        }
-
+          });
+        this.socket.on('message', (data)=> {
+            this.addMessage(data)
+        })       
 
         this.fetchAlbum = this.fetchAlbum.bind(this);
         this.fetchHistory = this.fetchHistory.bind(this);
         this.fetchHoneyDo = this.fetchHoneyDo.bind(this);
+        this.fetchMood = this.fetchMood.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleCheck = this.handleCheck.bind(this);
-
+        this.handleMessenger = this.handleMessenger.bind(this)
     }
 
     componentDidMount() {
         this.fetchAlbum(this.state.couple_key);
         this.fetchHistory(this.state.thisMonth, this.state.couple_key);
         this.fetchHoneyDo(this.state.couple_key);
+        this.fetchMood(this.state.couple_key);
     }
+
+    handleMessenger = event => {
+        event.preventDefault();
+        var data = {name:this.state.first_name, message: this.state.message};
+        this.socket.emit('message', data);
+        this.setState({message: ''});
+    }
+
+
+
+    addMessage = data => {
+        var current = new Date();
+        var hr = current.getHours();
+        var min = current.getMinutes();
+        if (min < 10) {
+            min = "0" + min;
+        }
+        var currentTime = hr + ":" + min;
+
+        var msg=''
+        if (data.name === this.state.first_name) {
+
+            msg = '<div class="d-flex flex-column"><small class="font-weight-light text-left">'
+                + data.name 
+                + '</small><div><label class="border border-primary rounded p-1 mb-0 text-left">'
+                + data.message
+                + '</label></div><small class="mt-0 text-left">'
+                + currentTime
+                + '</small></div>'
+
+        } else {
+            msg = '<div class="d-flex flex-column "><small class="font-weight-light text-right">'    
+                + data.name
+                + '</small><div class="d-flex justify-content-end"><label class="bg-primary rounded p-1 mb-0 text-right">'
+                + data.message
+                + '</label></div><small class="mt-0 text-right">'
+                + currentTime
+                + '</small></div>'
+        }
+        
+        var msgs = msg + this.state.messages   
+        this.setState({messages: msgs});
+    }
+
 
     handleChange = (event) => {
         this.setState({ [event.target.id] : event.target.value });    
@@ -102,6 +130,26 @@ export class Mypage extends Component {
         })    
     }
 
+
+    handleClick = (event) => {
+        console.log(event.target)
+        event.preventDefault();
+        //var query = {couple_key: this.state.couple_key, mood: event.target.value, email: this.state.email }
+        //fetch('/moodUpdate', {
+        //    method: 'POST',
+        //    headers: {'Content-Type': 'application/json'},
+        //    body: JSON.stringify(query)
+        //})
+        //.then((response) => {
+        //    if (response.status >= 400) {
+        //        console.log("Bad response from server");
+        //    } else {
+        //        this.fetchMood(this.state.couple_key);
+        //    }
+        //}) 
+           
+    }
+
     handleHoneyDo = (event) => {
         event.preventDefault();
         var query = {couple_key:this.state.couple_key, honey_do: this.state.honey_do}
@@ -112,6 +160,30 @@ export class Mypage extends Component {
         })
         this.fetchHoneyDo(this.state.couple_key)
         this.setState({honey_do: ''});
+    }
+
+    fetchMood = (couple_key) => {
+        var query = {
+            'couple_key' : couple_key
+        }
+        fetch('/mood', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(query)
+        })
+        .then((response) => {
+            if (response.status >= 400) {
+                console.log("Bad response from server");
+            }
+            return response.json()
+        })
+        .then((data) => {
+            if (data[0].email === this.state.email) {
+                this.setState({mood_me: data[0].mood,  mood_partner: data[1].mood})
+            } else {
+                this.setState({mood_me: data[1].mood,  mood_partner: data[0].mood})
+            }
+        })    
     }
 
     fetchHoneyDo = (couple_key) => {
@@ -181,7 +253,7 @@ export class Mypage extends Component {
     
         return (
           <div>
-              {this.state.events[date] ? <button type="button" className="btn btn-sm btn-secondary" data-toggle="tooltip" data-placement="top" title={this.state.events[date]} >{date}</button> : <div>{date}</div>}
+              {this.state.events[date] ? <div className="bg-dark text-white" data-toggle="tooltip" data-placement="top" title={this.state.events[date]} >{date}</div> : <div>{date}</div>}
           </div>
         );
     }
@@ -227,20 +299,22 @@ export class Mypage extends Component {
                                         anniversary={this.state.anniversary}
                                         photo={this.state.photo}
                                         photo_couple={this.state.photo_couple}/>
-                            
-                        <div class="p-5 border text-center"><br></br>Mood area<br></br></div>
 
-                            
-                            
-                        </div>
-
-                        <div className='m-0 col-4'>
-                       
+                           
                             <Album  couple_key={this.state.couple_key}
                                     albums={this.state.albums}
                                     last_one={this.state.last_one}
                                     fetchAlbum={this.fetchAlbum} 
                                     handleChange={this.handleChange} />
+                        
+                        </div>
+
+                        <div className='m-0 col-4'>
+                            <Mood   couple_key={this.state.couple_key}
+                                    mood_me={this.state.mood_me}
+                                    mood_partner={this.state.mood_partner}
+                                    handleClick={this.handleClick}
+                                    fetchMood={this.fetchMood} />
                             
                             <Messages first_name={this.state.first_name}
                                       messages={this.state.messages}
@@ -253,9 +327,8 @@ export class Mypage extends Component {
                         <div className='m-0 col-4'>
                             <div className='card-header p-2 border mt-1 d-flex justify-content-between'  data-toggle="modal" data-target="#historyAddModal"> <div>Upcoming Events</div><div className="btn btn-sm btn-primary text-white">add</div></div>
                                 <History couple_key={this.state.couple_key} />
-                            <div className='card-body border'>
-                                <Calendar renderDay={this.renderDay}
-                                          handleClick={this.handleClick} />
+                            <div className='card-body border '>
+                                <Calendar renderDay={this.renderDay} />
                             </div>
                             <HoneyDo honey_do={this.state.honey_do}
                                     honey_dos={this.state.honey_dos}

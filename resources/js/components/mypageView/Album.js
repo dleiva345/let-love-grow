@@ -70,10 +70,10 @@ export const Album = ({couple_key, albums, last_one, fetchAlbum}) => (
                 <hr></hr>
                             <div className="row justify-content-around">
                                 {albums.map((album) => (
-                                    <div className="card" style={{"width": "11rem"}}>
+                                    <div className="card mb-2" style={{"width": "12rem"}}>
                                         <img className="card-img-top" src={album.photo_link} height="100"></img>
                                         <div className="card-body">
-                                            <h6 className="card-title mb-0">{album.date.substring(0,10)}</h6>
+                                            <p className="card-title mb-0">{album.date.substring(0,10)}</p>
                                             <p className="card-text">{album.descr}</p>
                                             <div className="d-flex justify-content-around">
                                                 <button className="btn btn-sm btn-primary" data-toggle="modal" data-target="#albumModify">Modify</button>

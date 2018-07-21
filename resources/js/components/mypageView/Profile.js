@@ -13,7 +13,7 @@ export const Profile = ({couple_key, email, first_name,last_name,birthday,annive
                     Birthday: {birthday}<br></br>
                     Email: {email}<br></br>
 
-                <p className="mb-0 mt-2">With your partner</p>
+                <p className="mb-0 mt-2">Your partner</p>
                 <img className="img-thumbnail rounded float-left mr-2"
                      style={{width:"70px", height:"70px"}}
                      src={photo_couple}></img>

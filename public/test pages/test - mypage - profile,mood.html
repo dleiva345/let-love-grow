@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="./images/logo.png"/>
+        <title>Let Love Grow</title>
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.js"></script>
+
+
+    </head>
+
+    <body>
+
+        <div class = 'container' id="root">
+            
+            <!-- myPage -->
+            <div id='nav'>
+                    <nav class="navbar navbar-light bg-primary border">
+                        <span class="navbar-brand mb-0 h1"><img src='../4a327bdd8ed37600a68c43470bff35dc.png' height="50px"></img></span>
+                        
+                        <div class='d-flex justify-content-end'><a class="text-white"href="/">Logout</a></div>
+                    </nav>
+            </div>
+
+            <div class="border container">
+                <div class='row m-0'>
+
+                    <div class='col-4 m-0'>
+
+
+                        <!--Profile-->
+                        <div>
+                            <div class='card-header p-2 border mt-1'>Profile</div>
+                            <div class='card-body border'>
+                                <div class='clearfix'>
+                                    <p class="mb-0">You</p>
+                                    <img class="img-thumbnail rounded float-left mr-2"
+                                         style="width:70px;height:70px;"
+                                         src="https://www.disneyclips.com/imagesnewb/images/tiggerhappy2.gif">
+                                        <b>Tigger Disney</b><br>
+                                        1981-05-01<br>
+                                        tigger@disneyland.com
+                                    
+                                    <p class="mb-0 mt-2">With your partner</p>
+                                    <img class="img-thumbnail rounded float-left mr-2"
+                                         style="width:70px;height:70px;"
+                                         src="https://www.disneyclips.com/imagesnewb/images/pooh-tigger.png">
+                                         Anniversary: 2004-02-14 <br>
+                                         Couple key: asdfa <br>
+                                </div>
+                            </div>
+
+
+                            
+                            <!--Mood-->
+                            <div class='card-header p-2 border mt-1 d-flex justify-content-between' onClick="#"><div>Mood</div><div class="btn btn-sm btn-primary text-white">update</div></div>
+                            <div class='card-body border'>
+                                    <div class="dropdown mb-3">
+                                        <label>How are you feeling today?</label>
+                                        <input class="btn btn-primary btn-sm dropdown-toggle" value="test" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="test">
+                                           
+                                    </input>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                          <button class="dropdown-item" id="mood_me" value="happy" onClick="#">happy</button>
+                                          <button class="dropdown-item" id="mood.me" value="sad" onClick="#">sad</button>
+                                          <button class="dropdown-item" id="mood.me" value="calm" onClick="#">calm</button>
+                                        </div>
+                                    </div>
+
+                                    <div  class="form-group">
+                                        <label for="mood_partner">Your partner</label>
+                                        <input class="form-control" id="mood_partner" type="text" value="test" disabled></input>
+                                    </div>
+                            </div>  
+                        </div>
+
+                    
+                </div>
+            </div>      
+        </div>
+
+    </body>
+</html>

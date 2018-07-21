@@ -9,6 +9,27 @@ var app = express();
 //for socket.io //////////
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+console.log(io.path())
+
+// socket.io connection begins
+io.on('connection', function(socket) {
+    console.log('user connected: ', socket.id);
+ 
+    socket.join(socket.handshake.query.couple_key);
+    socket.on('message', function(...args){
+        console.log(...args)
+        io.to(socket.handshake.query.couple_key).emit('message', ...args);
+      });
+
+    // socket.on(socket.handshake.query.couple_key, function(data) {
+    //     console.log(data, socket.handshake.query.couple_key, 'something')
+    //     socket.emit(socket.handshake.query.couple_key, data)
+    // });
+
+    socket.on('disconnect', function(){
+      console.log('user disconnected: ', socket.id);
+    });
+  });
 //New connection will be established after successful login
 // --> go to app.post('/login', ......
 
@@ -61,14 +82,17 @@ var mongoose = require("mongoose");
 mongoose.Promise = Promise;
 // var mongoDBUrl = "mongodb://localhost:27017/letlovegrow";
 var mongoDBUrl = "mongodb://heroku_0mn17js6:umvht39kmt3dqbdmaqhs54tpl0@ds129831.mlab.com:29831/heroku_0mn17js6"
-mongoose.connect(mongoDBUrl, function(error)
-	{
-	console.log("MongoDB connected");
-});
+mongoose.connect(mongoDBUrl, { useNewUrlParser: true }, function(err){
+    if(err){
+        console.log(err);
+    }
+    console.log('MongoDB connected');
+} );
 
 const Album = require('./resources/db/models/AlbumDB.js');
 const History = require('./resources/db/models/HistoryDB.js');
-const HoneyDo = require('./resources/db/models/HoneyDoDB.js')
+const HoneyDo = require('./resources/db/models/HoneyDoDB.js');
+const Mood = require('./resources/db/models/MoodDB.js');
 
 
 /////////////////////////////////////////////////
@@ -97,8 +121,25 @@ app.post('/signup', function(req,res,next){
         body.photo_couple
         ], function(){
         console.log("signup data added successfully")
+
+        //generate happy mood in MongoDB - You always have to be happy when you login 
+            var couple_key = JSON.stringify(temp_key);
+            var newMood = {
+                couple_key: couple_key,
+                email: body.email,
+                mood: "happy"
+            }
+        
+            Mood.create(newMood, function(err, results){
+                if(err) {
+                    console.log(err)
+                }
+                console.log("Mood Added");
+            })
+
         res.redirect("/");
-    });
+        }
+    );
 })
 
 //login with MySQL///////////////////////////
@@ -115,31 +156,6 @@ app.post('/login', function(req,res,next){
             var foundUser = JSON.stringify(results[0]);
             var userData = JSON.parse(foundUser);
             userData.login = true;
-
-            // socket.io connection begins
-            var url = '/mypage/' + userData.couple_key;
-            io.path(url)
-            io.on('connection', function(socket) {
-                console.log('user connected: ', socket.id);
-             
-                socket.on('disconnect', function(){
-                  console.log('user disconnected: ', socket.id);
-                });
-                
-                socket.on('send_message', function(data){
-                    console.log(data)
-                  //var current = new Date();
-                  //var hr = current.getHours();
-                  //var min = current.getMinutes();
-                  //if (min < 10) {
-                  //    min = "0" + min;
-                  //}
-                  //var currentTime = hr + ":" + min;
-                  var msg = data.name + ' : ' + data.message + '\n' + currentTime + '\n';
-                  io.emit('receive_message', msg);
-                });
-              });
-              ////////////////////////////////////////
 
             res.send(userData)
 
@@ -241,10 +257,33 @@ app.post('/history', function(req, res){
         res.send(results)
     })
 })
-
-
 /////////////////////////////////////////////////////////////////////
 
+
+///Mood/////////////////////////////
+app.post('/moodUpdate', function(req,res){
+    Mood.findOneAndUpdate({'email' : req.body.email},{$set:{mood:req.body.mood}})
+    .exec(function(err, data){
+		if(err){
+			console.log(err);
+		} else {
+            console.log("Mood is updated");
+            res.send(data)
+        }
+	});    
+})
+
+app.post('/mood', function(req,res){
+    var couple_key = JSON.stringify(req.body.couple_key);
+
+    Mood.find({'couple_key': couple_key}, function(err, results){
+        if (err) {
+            console.log(err);
+        }
+        res.send(results)
+    })
+})
+////////////////////////////////////
 
 //////honey Do////////////////////////
 app.post('/honeydoDelete/:id', function(req,res){

@@ -1,21 +1,19 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
-var CalendarSchema = new Schema({
+var MoodSchema = new Schema({
   couple_key: {
     type: String,
     required: true
   },
-  event: {
+  email: {
     type: String,    
     required: true
   },
-  date: {
-    type: Date,
+  mood: {
+    type: String,    
     required: true
   }
-  
- 
 });
 
-var Calendar = mongoose.model("Calendar", CalendarSchema);
-module.exports = Calendar;
+var Mood = mongoose.model("Mood", MoodSchema);
+module.exports = Mood;

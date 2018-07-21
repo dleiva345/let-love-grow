@@ -5,13 +5,14 @@ export class Signup extends Component {
     render(){
         return (
             <div>
+            <div className= 'container col-10 offset-1 my-4'><img src='../53ba7c9ebcdbd0921aaecf934bb6c396.png'></img></div>
                 <form className='col-10 offset-1' autoComplete="off" action='/signup' method='POST'>
                     <small className="form-text text-muted">*required</small>
                     <div className="form-group row" >
                       <label htmlFor="inputEmail" className="col-sm-2 col-form-label">Email*</label>
                       
                       <div className="col-sm-10">
-                        <input type="email" className="form-control" id="inputEmail" name="email"placeholder="Email" aria-describedby="emailHelp" required></input>
+                        <input type="email" className="form-control" id="inputEmail" name="email"placeholder="Email" aria-describedby="emailHelp"></input>
                         
                       </div>
                     </div>
@@ -19,18 +20,18 @@ export class Signup extends Component {
                     <div className="form-group row">
                         <label htmlFor="inputPassword" className="col-sm-2 col-form-label">Password*</label>
                         <div className="col-sm-10">
-                          <input type="password" className="form-control" id="inputPassword" name="password" placeholder="Password" required></input>
+                          <input type="password" className="form-control" id="inputPassword" name="password" placeholder="Password"></input>
                         </div>
                     </div>
             
                     <div className="form-row">
                         <div className="form-group col-md-6">
                           <label htmlFor="inputFirstName">First Name*</label>
-                          <input type="text" className="form-control" id="inputFirstName" name="firstName" placeholder="First Name" required></input>
+                          <input type="text" className="form-control" id="inputFirstName" name="firstName" placeholder="First Name"></input>
                         </div>
                         <div className="form-group col-md-6">
                           <label htmlFor="inputLastName">Last Name*</label>
-                          <input type="text" className="form-control" id="inputLastName" name="lastName" placeholder="Last Name" required></input>
+                          <input type="text" className="form-control" id="inputLastName" name="lastName" placeholder="Last Name"></input>
                         </div>
                     </div>
 
@@ -57,13 +58,6 @@ export class Signup extends Component {
             
                     <div className="form-group row">
                         <label htmlFor="uploadPhoto" className="col-sm-2 col-form-label">Choose your photo</label>
-                        <div className="col-sm-10">
-                            <input type="file" className="form-control-file" id="uploadPhoto" name="photoLink"></input>
-                        </div>
-                    </div>
-
-                    <div className="form-group row">
-                        <label htmlFor="uploadPhoto" className="col-sm-2 col-form-label">Choose partner's photo</label>
                         <div className="col-sm-10">
                             <input type="file" className="form-control-file" id="uploadPhoto" name="photoLink"></input>
                         </div>

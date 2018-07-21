@@ -10,6 +10,21 @@ export class App extends Component {
 
     constructor(props) {
         super(props)
+
+        //for test purpose
+        //this.state = {
+        //    couple_key:'1tbjk',
+        //    email:'abc@abc.com',
+        //    password:'1234',
+        //    first_name:'Cookie',
+        //    last_name:'Oreo',
+        //    birthday:'',
+        //    anniversary:'',
+        //    photo:'https://vignette.wikia.nocookie.net/disney/images/8/84/Tigger_pose_.jpg',
+        //    photo_couple:'http://3.bp.blogspot.com/-Y03H2lZHFog/Tjt2IEISHBI/AAAAAAAAAOw/hiA3bn7b4kw/s1600/Tigger+and+pooh+pictures+tigger+and+pooh+2.gif',
+        //    login: true
+        //}
+
         this.state = {
             couple_key:'',
             email:'',
@@ -48,12 +63,14 @@ export class App extends Component {
             return <Redirect to='' />
         }
     }
-
+    // 
+    // 
+    // 
     render(){
         return (
             <Router>
             <div>
-                {this.isLoginSuccess()}
+            {this.isLoginSuccess()}
                 <Switch>
                     <Route exact path='/' render={ (props) => <Start onUpdate={this.onUpdate} />} />
                     <Route path={'/mypage/'+ this.state.couple_key} render={ (props) => <Mypage couple_key={this.state.couple_key}

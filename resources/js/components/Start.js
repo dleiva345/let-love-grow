@@ -6,16 +6,8 @@ export class Start extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            couple_key: '',
-            email: '',
-            password: '',
-            first_name: '',
-            last_name: '',
-            birthday: '',
-            anniversary: '',
-            photo: '',
-            photo_couple:'',
-            login: false
+            email:'',
+            password:''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -44,7 +36,8 @@ export class Start extends Component {
             return response.json();
         })
         .then(function(data) {
-            if (data.login) {
+            if (data.email) {
+                //update parent state
                 onUpdate(data) 
             } else {
                 //redirect to '/'
@@ -52,7 +45,9 @@ export class Start extends Component {
             }
             
         })
-
+        .catch(function(err){
+            console.log(err);
+        });
     }
 
     render() {
