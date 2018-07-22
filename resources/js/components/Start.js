@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import Logo from '../../images/logo2.png'
+import Logo from '../../images/logo.png'
 import AboutPic1 from '../../images/about-main.jpg'
 import AboutPic2 from '../../images/about-inset.jpg'
 import Staff1 from '../../images/staff-01.jpg'
@@ -57,28 +57,30 @@ export class Start extends Component {
         });
     }
 
+    //<h1>Let Love <span className="text-success">Grow</span></h1>
+
     render() {
         return (
         <div>
 
             <nav className="navbar navbar-expand-lg default-color sticky-top lighten-4 justify-content-between">
-                <a className="navbar-brand" href="#"><img src={Logo} height="30" /></a>
+                <a className="navbar-brand" href="#"><img src={Logo} height="50" /></a>
                 <div>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span></button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item active">
-                                <a className="nav-link" href="#banner">Home <span className="sr-only">(current)</span></a>
+                                <a className="nav-link navmenu" href="#banner">Home<span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#about">About us</a>
+                                <a className="nav-link navmenu" href="#about">About us</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#our_team">Team</a>
+                                <a className="nav-link navmenu" href="#our_team">Team</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#signup">Sign Up</a>
+                                <a className="nav-link navmenu" href="#signup">Sign Up</a>
                             </li>
                         </ul>
                     </div>
@@ -91,7 +93,9 @@ export class Start extends Component {
                         <div className="banner-static mt-0">
                             <div className="banner-text">
                                 <div className="banner-cell">
-                                    <h1>Let &nbsp; Love &nbsp; <span className="text-success">Grow</span></h1>
+
+                                    <img src={Logo} height="150" />
+                                    
                                     <form className= 'mb-5 col-6 offset-3' onSubmit={this.handleSubmit}  method='POST'>
                                         <div className='container row offset-1'>
                                             <div className="form-group mr-2">
@@ -127,7 +131,7 @@ export class Start extends Component {
                     <div className="row">
                         <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                                <h2 className="block-title"> About Us </h2>
+                                <h2 className="h2 text-default"> About Us </h2>
                                 <h3>IT STARTED, QUITE SIMPLY, LIKE THIS...</h3>
                                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia, nostrud exercitation ullamco. </p>
 
@@ -156,7 +160,7 @@ export class Start extends Component {
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                                <h2 className="block-title text-center">Our Team</h2>
+                                <h2 className="h2 text-white text-center">Our Team</h2>
                                 <p className="title-caption text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
                             </div>
                             <div className="team-box">
@@ -226,7 +230,7 @@ export class Start extends Component {
                         <div className="form-reservations-box">
                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                                    <h2 className="block-title text-center">Sign Up</h2>
+                                    <h2 className="text-default text-center h2">Sign Up</h2>
                                 </div>
                                 <p>PLEASE FILL OUT ALL REQUIRED* FIELDS. THANKS!</p>
                 
