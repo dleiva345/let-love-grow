@@ -52,24 +52,24 @@ export const Mood = ({couple_key, mood_me, mood_partner, handleClick, fetchMood}
                                 } 
                         </button>
                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <button className="dropdown-item" id="mood_me" value="happy" onClick={(e) => handleClick(e)}><Icon size={18} icon={happy}/></button>
-                                <button className="dropdown-item" id="mood_me" value="smile" onClick={(e) => handleClick(e)}><Icon size={18} icon={smile}/></button>
-                                <button className="dropdown-item" id="mood_me" value="tongue" onClick={(e) => handleClick(e)}><Icon size={18} icon={tongue}/></button>
-                                <button className="dropdown-item" id="mood_me" value="sad" onClick={(e) => handleClick(e)}><Icon size={18} icon={sad}/></button>
-                                <button className="dropdown-item" id="mood_me" value="wink" onClick={(e) => handleClick(e)}><Icon size={18} icon={wink}/></button>
-                                <button className="dropdown-item" id="mood_me" value="grin" onClick={(e) => handleClick(e)}><Icon size={18} icon={grin}/></button>
-                                <button className="dropdown-item" id="mood_me" value="cool" onClick={(e) => handleClick(e)}><Icon size={18} icon={cool}/></button>
-                                <button className="dropdown-item" id="mood_me" value="angry" onClick={(e) => handleClick(e)}><Icon size={18} icon={angry}/></button>
-                                <button className="dropdown-item" id="mood_me" value="evil" onClick={(e) => handleClick(e)}><Icon size={18} icon={evil}/></button>
-                                <button className="dropdown-item" id="mood_me" value="shocked" onClick={(e) => handleClick(e)}><Icon size={18} icon={shocked}/></button>
-                                <button className="dropdown-item" id="mood_me" value="baffled" onClick={(e) => handleClick(e)}><Icon size={18} icon={baffled}/></button>
-                                <button className="dropdown-item" id="mood_me" value="confused" onClick={(e) => handleClick(e)}><Icon size={18} icon={confused}/></button>
-                                <button className="dropdown-item" id="mood_me" value="neutral" onClick={(e) => handleClick(e)}><Icon size={18} icon={neutral}/></button>
-                                <button className="dropdown-item" id="mood_me" value="hipster" onClick={(e) => handleClick(e)}><Icon size={18} icon={hipster}/></button>
-                                <button className="dropdown-item" id="mood_me" value="wondering" onClick={(e) => handleClick(e)}><Icon size={18} icon={wondering}/></button>
-                                <button className="dropdown-item" id="mood_me" value="sleepy" onClick={(e) => handleClick(e)}><Icon size={18} icon={sleepy}/></button>
-                                <button className="dropdown-item" id="mood_me" value="frustrated" onClick={(e) => handleClick(e)}><Icon size={18} icon={frustrated}/></button>
-                                <button className="dropdown-item" id="mood_me" value="crying" onClick={(e) => handleClick(e)}><Icon size={18} icon={crying}/></button>
+                                <button className="dropdown-item" id="mood_me" value="happy" onClick={() => handleClick("happy")}><Icon size={18} icon={happy}/></button>
+                                <button className="dropdown-item" id="mood_me" value="smile" onClick={() => handleClick("smile")}><Icon size={18} icon={smile}/></button>
+                                <button className="dropdown-item" id="mood_me" value="tongue" onClick={() => handleClick("tongue")}><Icon size={18} icon={tongue}/></button>
+                                <button className="dropdown-item" id="mood_me" value="sad" onClick={() => handleClick("sad")}><Icon size={18} icon={sad}/></button>
+                                <button className="dropdown-item" id="mood_me" value="wink" onClick={() => handleClick("wink")}><Icon size={18} icon={wink}/></button>
+                                <button className="dropdown-item" id="mood_me" value="grin" onClick={() => handleClick("grin")}><Icon size={18} icon={grin}/></button>
+                                <button className="dropdown-item" id="mood_me" value="cool" onClick={() => handleClick("cool")}><Icon size={18} icon={cool}/></button>
+                                <button className="dropdown-item" id="mood_me" value="angry" onClick={() => handleClick("angry")}><Icon size={18} icon={angry}/></button>
+                                <button className="dropdown-item" id="mood_me" value="evil" onClick={() => handleClick("evil")}><Icon size={18} icon={evil}/></button>
+                                <button className="dropdown-item" id="mood_me" value="shocked" onClick={() => handleClick("shocked")}><Icon size={18} icon={shocked}/></button>
+                                <button className="dropdown-item" id="mood_me" value="baffled" onClick={() => handleClick("baffled")}><Icon size={18} icon={baffled}/></button>
+                                <button className="dropdown-item" id="mood_me" value="confused" onClick={() => handleClick("confused")}><Icon size={18} icon={confused}/></button>
+                                <button className="dropdown-item" id="mood_me" value="neutral" onClick={() => handleClick("neutral")}><Icon size={18} icon={neutral}/></button>
+                                <button className="dropdown-item" id="mood_me" value="hipster" onClick={() => handleClick("hipster")}><Icon size={18} icon={hipster}/></button>
+                                <button className="dropdown-item" id="mood_me" value="wondering" onClick={() => handleClick("wondering")}><Icon size={18} icon={wondering}/></button>
+                                <button className="dropdown-item" id="mood_me" value="sleepy" onClick={() => handleClick("sleepy")}><Icon size={18} icon={sleepy}/></button>
+                                <button className="dropdown-item" id="mood_me" value="frustrated" onClick={() => handleClick("frustrated")}><Icon size={18} icon={frustrated}/></button>
+                                <button className="dropdown-item" id="mood_me" value="crying" onClick={() => handleClick("crying")}><Icon size={18} icon={crying}/></button>
                         </div>
                 </div>
 

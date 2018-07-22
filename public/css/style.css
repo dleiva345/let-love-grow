@@ -46,6 +46,8 @@
 @import url(owl.theme.css);
 @import url(owl.carousel.css);
 @import url(slick.css);
+@import url(flaticon.css);
+@import url(font-awesome.min.css);
 @import url(bootstrap-datetimepicker.css);
 @import url(bootstrap-select.min.css);
 @import url(normalize.css);
@@ -55,7 +57,9 @@
     SKELETON
 -------------------------------------------------------------------*/
 @font-face {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'nautilus_pompiliusregular';
+    src: url('../fonts/nautilus-webfont.woff2') format('woff2'),
+         url('../fonts/nautilus-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -652,6 +656,7 @@ html, body{ height: 100%; }
     SPECIAL-MENU AREA
 -------------------------------------------------------------------*/
 .special-menu{
+	background:url(../images/special_menu_bg.jpg) no-repeat center;
 	background-attachment:fixed;
 	background-size:cover;
 	position:relative;
@@ -1177,7 +1182,7 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
 
 .footer-main{}
 .footer-news{
-	
+	background:url(../images/newsletter-bg.jpg) no-repeat center;
 	background-attachment:fixed;
 	background-size:cover;
 	position:relative;
@@ -1281,6 +1286,9 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
     padding: 4px;
 }
 .footer-box {
+	background-image:-moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url(..images/footer_background.jpg);
+	background-image:-webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url(../images/footer_background.jpg);
+	background-image:radial-gradient(ellipse at center, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url(../images/footer_background.jpg);
 	background-color:#111;background-position:center;background-repeat:no-repeat;background-size:cover
 	}
 .socials-box li {
@@ -1465,19 +1473,19 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
 	background: #8dc63f;
 }
 .tab-menu .slick-arrow.slick-prev{
-	background: #8dc63f url(../images/back.png) no-repeat center;
+	background: #8dc63f url(../../images/back.png) no-repeat center;
 	background-position: 2px 4px;
 }
 .tab-menu .slick-arrow.slick-next{
-	background: #8dc63f url(../images/next.png) no-repeat center;
+	background: #8dc63f url(../../images/next.png) no-repeat center;
 	background-position: 7px 4px;
 }
 .tab-menu .slick-arrow.slick-prev:hover{
-	background:#8dc63f url(../images/back_hover.png) no-repeat center;
+	background:#8dc63f url(../../images/back_hover.png) no-repeat center;
 	background-position: 2px 4px;
 }
 .tab-menu .slick-arrow.slick-next:hover{
-	background:#8dc63f url(../images/next_hover.png) no-repeat center;
+	background:#8dc63f url(../../images/next_hover.png) no-repeat center;
 	background-position: 7px 4px;
 }
 

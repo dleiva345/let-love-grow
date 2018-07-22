@@ -131,22 +131,20 @@ export class Mypage extends Component {
     }
 
 
-    handleClick = (event) => {
-        console.log(event.target)
-        event.preventDefault();
-        //var query = {couple_key: this.state.couple_key, mood: event.target.value, email: this.state.email }
-        //fetch('/moodUpdate', {
-        //    method: 'POST',
-        //    headers: {'Content-Type': 'application/json'},
-        //    body: JSON.stringify(query)
-        //})
-        //.then((response) => {
-        //    if (response.status >= 400) {
-        //        console.log("Bad response from server");
-        //    } else {
-        //        this.fetchMood(this.state.couple_key);
-        //    }
-        //}) 
+    handleClick = (str) => {
+        var query = {couple_key: this.state.couple_key, mood: str, email: this.state.email }
+        fetch('/moodUpdate', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(query)
+        })
+        .then((response) => {
+            if (response.status >= 400) {
+                console.log("Bad response from server");
+            } else {
+                this.fetchMood(this.state.couple_key);
+            }
+        }) 
            
     }
 

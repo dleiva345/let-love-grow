@@ -2,17 +2,20 @@
 <html lang="en">
     <head>
         
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
         <link rel="icon" href="./images/logo.png"/>
         <title>Let Love Grow</title>
 
         <!-- Font Awesome -->
-        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Bootstrap core CSS -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
         <!-- Material Design Bootstrap -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+        <!-- Site CSS -->
+        <link rel="stylesheet" href="./css/style.css">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="./css/responsive.css">
 
 
         <!-- JQuery -->
@@ -25,23 +28,18 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.js"></script>
-
-        <style>
-            body {
-              font-family: 'Quicksand', sans-serif;
-            }
-            .msgWindow {
-                overflow-y: auto;
-            }
-          </style>
-        
-
+        <!-- Modernizer -->
+        <script src="./js/modernizer.js"></script>
     </head>
 
     <body>
 
         <div class = 'container' id="root">Loading...</div>
         <script src="/socket.io/socket.io.js"></script>
+        
+        <!-- ALL PLUGINS -->
+        <script src="./js/all.js"></script>
+        <script src="./js/custom.js"></script>
         <script type="text/babel" src="./bundle.js"></script>
 
     </body>
