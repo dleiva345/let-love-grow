@@ -21,12 +21,12 @@ import { crying } from 'react-icons-kit/icomoon/crying'
 
 export const Mood = ({couple_key, mood_me, mood_partner, handleClick, fetchMood}) => (
     <div>
-        <div className='card-header p-2 border mt-1 d-flex justify-content-between' onClick={()=>fetchMood(couple_key)}><div>Mood</div><div className="btn btn-sm btn-primary text-white">update</div></div>
+        <div className='card-header p-2 border mt-1 d-flex justify-content-between' onClick={()=>fetchMood(couple_key)}><div>Mood</div><div className="btn btn-sm btn-default text-white">update</div></div>
         <div className='card-body border'>
             <p>How are you feeling today?</p>
                     
             <div className="dropdown mb-3 offset-4 ">   
-                <button className="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button className="btn btn-default dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         { (() => {
                             switch(mood_me){
                                 case 'happy': return  <Icon size={18} icon={happy}/>

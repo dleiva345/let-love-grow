@@ -34,7 +34,7 @@ export const History = ({couple_key}) => (
                     <input type="hidden" className="form-control form-control form-control-sm" id="inputCoupleKey" name="couple_key" value={couple_key}></input>
                     </div>
                 </div>
-                <button className="btn btn-primary btn-sm mt-0" type="submit" name="action">Save</button>
+                <button className="btn btn-default btn-sm mt-0" type="submit" name="action">Save</button>
             </form>
 
       </div>

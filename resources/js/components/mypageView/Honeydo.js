@@ -14,7 +14,7 @@ export const HoneyDo = ({honey_do, honey_dos, handleChange, handleHoneyDo, handl
             <form>
                 <div className="row m-0 ">
                     <input className="col-9" id="honey_do" type="text" name="honey_do" onChange={(e) => {handleChange(e)}} value={honey_do}></input>
-                    <button type="submit" className="col-3 btn btn-sm btn-primary text-white" onClick={(e) => handleHoneyDo(e)}>Add</button>
+                    <button type="submit" className="col-3 btn btn-sm btn-default text-white" onClick={(e) => handleHoneyDo(e)}>Add</button>
                 </div>
             </form>
         </div>

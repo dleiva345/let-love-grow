@@ -11,7 +11,7 @@ export const Messages = ({first_name, messages, message, handleMessenger, handle
             <div className="row m-0 ">
               <input className="col-3" id="first_name" value={first_name} readonly></input>
               <input className="col-9" id="message" type="text" onChange={(e) => {handleChange(e)}} value={message} ></input>
-              <button type="submit" className="col-3 btn btn-primary btn-sm" onClick={handleMessenger}>Send</button>
+              <button type="submit" className="col-3 btn btn-default btn-sm" onClick={handleMessenger}>Send</button>
             </div>
         </form>
 

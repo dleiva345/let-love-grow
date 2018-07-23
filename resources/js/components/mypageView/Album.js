@@ -3,7 +3,7 @@ import React from 'react'
 export const Album = ({couple_key, albums, last_one, fetchAlbum}) => (
     <div id='album'>
     
-      <div className='card-header p-2 border mt-1 d-flex justify-content-between'  data-toggle="modal" data-target="#albumModal"> <div>Album</div><div className="btn btn-sm btn-primary text-white">add</div></div>
+      <div className='card-header p-2 border mt-1 d-flex justify-content-between'  data-toggle="modal" data-target="#albumModal"> <div>Album</div><div className="btn btn-sm btn-default text-white">add</div></div>
 
         <div className="modal fade" id="albumModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-lg" role="document">
@@ -46,7 +46,7 @@ export const Album = ({couple_key, albums, last_one, fetchAlbum}) => (
                                       <input type="hidden" className="form-control" id="inputCoupleKey" name="couple_key" value={couple_key}></input>
                                     </div>
                                 </div>
-                                <button className="btn btn-primary btn-sm offset-11" type="submit" name="action"
+                                <button className="btn btn-default btn-sm offset-11" type="submit" name="action"
                                         data-toggle="modal" data-target="#albumUploadModal">Upload
                                 </button>
                             </form>
@@ -62,7 +62,7 @@ export const Album = ({couple_key, albums, last_one, fetchAlbum}) => (
                                             </button>
                                         </div>
                                         <div className="modal-footer">
-                                          <button onClick={() => {fetchAlbum(couple_key)}} type="button" className="btn btn-primary" data-dismiss="modal" >Close</button>
+                                          <button onClick={() => {fetchAlbum(couple_key)}} type="button" className="btn btn-default" data-dismiss="modal" >Close</button>
                                         </div>
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@ export const Album = ({couple_key, albums, last_one, fetchAlbum}) => (
                                             <p className="card-title mb-0">{album.date.substring(0,10)}</p>
                                             <p className="card-text">{album.descr}</p>
                                             <div className="d-flex justify-content-around">
-                                                <button className="btn btn-sm btn-primary" data-toggle="modal" data-target="#albumModify">Modify</button>
+                                                <button className="btn btn-sm btn-default" data-toggle="modal" data-target="#albumModify">Modify</button>
 
                                                 <div className="modal fade" id="albumModify" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                 <div className="modal-dialog modal-dialog-centered" role="document">
@@ -107,7 +107,7 @@ export const Album = ({couple_key, albums, last_one, fetchAlbum}) => (
                                                                 </div>
                                                             </div>
                                                     
-                                                            <button className="btn btn-primary btn-sm" type="submit" id={album._id} name="action"
+                                                            <button className="btn btn-default btn-sm" type="submit" id={album._id} name="action"
                                                                     data-toggle="modal" data-target="#modifyConfirmModal">Save changes
                                                             </button>
                                                         </form>

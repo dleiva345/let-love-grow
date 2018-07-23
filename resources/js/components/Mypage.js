@@ -91,7 +91,7 @@ export class Mypage extends Component {
 
             msg = '<div class="d-flex flex-column"><small class="font-weight-light text-left">'
                 + data.name 
-                + '</small><div><label class="border border-primary rounded p-1 mb-0 text-left">'
+                + '</small><div><label class="border border-default rounded p-1 mb-0 text-left">'
                 + data.message
                 + '</label></div><small class="mt-0 text-left">'
                 + currentTime
@@ -100,7 +100,7 @@ export class Mypage extends Component {
         } else {
             msg = '<div class="d-flex flex-column "><small class="font-weight-light text-right">'    
                 + data.name
-                + '</small><div class="d-flex justify-content-end"><label class="bg-primary rounded p-1 mb-0 text-right text-light">'
+                + '</small><div class="d-flex justify-content-end"><label class="bg-default rounded p-1 mb-0 text-right text-light">'
                 + data.message
                 + '</label></div><small class="mt-0 text-right">'
                 + currentTime
@@ -324,7 +324,7 @@ export class Mypage extends Component {
                         </div>
 
                         <div className='m-0 col-4'>
-                            <div className='card-header p-2 border mt-1 d-flex justify-content-between'  data-toggle="modal" data-target="#historyAddModal"> <div>Upcoming Events</div><div className="btn btn-sm btn-primary text-white">add</div></div>
+                            <div className='card-header p-2 border mt-1 d-flex justify-content-between'  data-toggle="modal" data-target="#historyAddModal"> <div>Upcoming Events</div><div className="btn btn-sm btn-default text-white">add</div></div>
                                 <History couple_key={this.state.couple_key} />
                             <div className='card-body border '>
                                 <Calendar renderDay={this.renderDay} />
