@@ -133,11 +133,13 @@ export class Start extends Component {
                             <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                                 <h2 className="h2 text-default"> About Us </h2>
                                 <h3>IT STARTED, QUITE SIMPLY, LIKE THIS...</h3>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia, nostrud exercitation ullamco. </p>
+                                <p> With the advent of social media platforms like Facebook, we noticed an unfortunate focus on quantity over quality of relationships. With the growth of platforms like Tinder, we also found that relationships spiraled to a superficial level. </p>
 
-                                <p> Aenean commodo ligula eget dolor aenean massa. Cum sociis nat penatibu set magnis dis parturient montes, nascetur ridiculus mus. quam felisorat, ultricies nec, Aenean commodo ligula eget dolor penatibu set magnis is parturient montes, nascetur ridiculus mus. quam felisorat, ultricies nec, pellentesque eu, pretium quis, sem. quat massa quis enim. Donec vitae sapien ut libero venenatis fauci Nullam quis ante. Etiam sit amet rci eget eros. </p>
+                                <p> Let Love Grow wants to take back relationships and make them intimate again! Through our app, users will be able to maintain personal relationships on the individual level and watch their personal relationships grow. </p>
 
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia, nostrud exercitation ullamco. </p>
+                                <p> LOur current release focuses on growing the relationship with your partner. Look out for our next release which will enable you to maintain relationships with your family and closest friends. </p>
+
+                                <p> LET'S MAKE RELATIONSHIPS GREAT AGAIN! </p>
                             </div>
                         </div>
 
@@ -161,7 +163,7 @@ export class Start extends Component {
                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                                 <h2 className="h2 text-white text-center">Our Team</h2>
-                                <p className="title-caption text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                                <p className="title-caption text-center">We are a cross-functional team of ladies with diverse skills and interests that allow us to deliver beautiful, complex and relevant products. Indeed, the whole is greater than the sum of its parts. </p>
                             </div>
                             <div className="team-box">
                 
@@ -173,7 +175,7 @@ export class Start extends Component {
                                             </div>
                                             <div className="text-col">
                                                 <h3>Jin Kim</h3>
-                                                <p>Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Aenean commodo ligula.</p>
+                                                <p>Back-end Guru</p>
                                                 <ul className="team-social">
                                                     <li><a href="http://www.github.com/jinkkim"><i className="fa fa-github-square" aria-hidden="true"></i></a></li>
                                                     <li><a href="https://www.instagram.com/k9.cookie"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
@@ -190,7 +192,7 @@ export class Start extends Component {
                                             </div>
                                             <div className="text-col">
                                                 <h3>Marika Manuud</h3>
-                                                <p>Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Aenean commodo ligula.</p>
+                                                <p>Project Manager</p>
                                                 <ul className="team-social">
                                                     <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
                                                     <li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -207,7 +209,7 @@ export class Start extends Component {
                                             </div>
                                             <div className="text-col">
                                                 <h3>Debbie Leiva</h3>
-                                                <p>Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Aenean commodo ligula.</p>
+                                                <p>UI/UX Captain</p>
                                                 <ul className="team-social">
                                                     <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
                                                     <li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -232,7 +234,9 @@ export class Start extends Component {
                                 <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                                     <h2 className="text-default text-center h2">Sign Up</h2>
                                 </div>
-                                <p>PLEASE FILL OUT ALL REQUIRED* FIELDS. THANKS!</p>
+                                <h4 class="form-title">LET'S KEEP YOUR LOVE GROWING</h4>
+
+                                <p> PLEASE FILL OUT ALL REQUIRED* FIELDS. THANKS! </p>
                 
                                 <form className='col-10 offset-1' autoComplete="off" action='/signup' method='POST'>
                                     <small className="form-text text-muted">*required</small>

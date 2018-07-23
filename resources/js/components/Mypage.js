@@ -100,7 +100,7 @@ export class Mypage extends Component {
         } else {
             msg = '<div class="d-flex flex-column "><small class="font-weight-light text-right">'    
                 + data.name
-                + '</small><div class="d-flex justify-content-end"><label class="bg-primary rounded p-1 mb-0 text-right">'
+                + '</small><div class="d-flex justify-content-end"><label class="bg-primary rounded p-1 mb-0 text-right text-light">'
                 + data.message
                 + '</label></div><small class="mt-0 text-right">'
                 + currentTime
