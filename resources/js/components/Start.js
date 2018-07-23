@@ -74,7 +74,7 @@ export class Start extends Component {
                                 <a className="nav-link navmenu" href="#banner">Home<span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link navmenu" href="#about">About us</a>
+                                <a className="nav-link navmenu" href="#about">About Us</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link navmenu" href="#our_team">Team</a>
@@ -137,7 +137,7 @@ export class Start extends Component {
 
                                 <p> Let Love Grow wants to take back relationships and make them intimate again! Through our app, users will be able to maintain personal relationships on the individual level and watch their personal relationships grow. </p>
 
-                                <p> LOur current release focuses on growing the relationship with your partner. Look out for our next release which will enable you to maintain relationships with your family and closest friends. </p>
+                                <p> Our current release focuses on growing the relationship with your partner. Look out for our next release which will enable you to maintain relationships with your family and closest friends. </p>
 
                                 <p> LET'S MAKE RELATIONSHIPS GREAT AGAIN! </p>
                             </div>
@@ -239,70 +239,74 @@ export class Start extends Component {
                                 <p> PLEASE FILL OUT ALL REQUIRED* FIELDS. THANKS! </p>
                 
                                 <form className='col-10 offset-1' autoComplete="off" action='/signup' method='POST'>
-                                    <small className="form-text text-muted">*required</small>
-                                    <div className="form-group row" >
-                                      <label htmlFor="inputEmail" className="col-sm-2 col-form-label">Email*</label>
+                                    <div>
+                                        <small className="form-text text-muted">*required</small>
+                                        <div className="form-group row" >
+                                          <label htmlFor="inputEmail" className="col-sm-2 col-form-label">Email*</label>
 
-                                      <div className="col-sm-10">
-                                        <input type="email" className="form-control" id="inputEmail" name="email"placeholder="Email" aria-describedby="emailHelp"></input>
+                                          <div className="col-sm-10">
+                                            <input type="email" className="form-control" id="inputEmail" name="email"placeholder="Email" aria-describedby="emailHelp"></input>
 
-                                      </div>
-                                    </div>
+                                          </div>
+                                        </div>
 
-                                    <div className="form-group row">
-                                        <label htmlFor="inputPassword" className="col-sm-2 col-form-label">Password*</label>
-                                        <div className="col-sm-10">
-                                          <input type="password" className="form-control" id="inputPassword" name="password" placeholder="Password"></input>
+                                        <div className="form-group row">
+                                            <label htmlFor="inputPassword" className="col-sm-2 col-form-label">Password*</label>
+                                            <div className="col-sm-10">
+                                              <input type="password" className="form-control" id="inputPassword" name="password" placeholder="Password"></input>
+                                            </div>
+                                        </div>
+
+                                        <div className="form-row">
+                                            <div className="form-group col-md-6">
+                                              <label htmlFor="inputFirstName">First Name*</label>
+                                              <input type="text" className="form-control" id="inputFirstName" name="firstName" placeholder="First Name"></input>
+                                            </div>
+                                            <div className="form-group col-md-6">
+                                              <label htmlFor="inputLastName">Last Name*</label>
+                                              <input type="text" className="form-control" id="inputLastName" name="lastName" placeholder="Last Name"></input>
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row">
+                                            <label htmlFor="inputCoupleID" className="col-sm-2 col-form-label">Couple Key</label>
+                                            <div className="col-sm-10">
+                                              <input type="text" className="form-control" id="inputCoupleID" name="coupleKey" placeholder="If your partner has one..."></input>
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row">
+                                            <label htmlFor="inputBirthday" className="col-sm-2 col-form-label">Birthday</label>
+                                            <div className="col-sm-10">
+                                              <input type="date" className="form-control" id="inputBirthday" name="birthday" placeholder="2018-01-01"></input>
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row">
+                                            <label htmlFor="inputAnniversary" className="col-sm-2 col-form-label">Anniversary</label>
+                                            <div className="col-sm-10">
+                                              <input type="date" className="form-control" id="inputAnniversary" name="anniversary" placeholder="2018-01-01"></input>
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row">
+                                            <label htmlFor="uploadPhoto" className="col-sm-2 col-form-label">Choose your photo</label>
+                                            <div className="col-sm-10">
+                                                <input type="file" className="form-control-file" id="uploadPhoto" name="photo"></input>
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row">
+                                            <label htmlFor="uploadPhoto" className="col-sm-2 col-form-label">Choose your partner's photo</label>
+                                            <div className="col-sm-10">
+                                                <input type="file" className="form-control-file" id="uploadPhoto2" name="photo_couple"></input>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div className="form-row">
-                                        <div className="form-group col-md-6">
-                                          <label htmlFor="inputFirstName">First Name*</label>
-                                          <input type="text" className="form-control" id="inputFirstName" name="firstName" placeholder="First Name"></input>
-                                        </div>
-                                        <div className="form-group col-md-6">
-                                          <label htmlFor="inputLastName">Last Name*</label>
-                                          <input type="text" className="form-control" id="inputLastName" name="lastName" placeholder="Last Name"></input>
-                                        </div>
+                                    <div className="container d-flex justify-content-center">
+                                        <button className="btn btn-default" type="submit" name="action">Grow Baby Grow!</button>
                                     </div>
-
-                                    <div className="form-group row">
-                                        <label htmlFor="inputCoupleID" className="col-sm-2 col-form-label">Couple Key</label>
-                                        <div className="col-sm-10">
-                                          <input type="text" className="form-control" id="inputCoupleID" name="coupleKey" placeholder="If your partner has one..."></input>
-                                        </div>
-                                    </div>
-
-                                    <div className="form-group row">
-                                        <label htmlFor="inputBirthday" className="col-sm-2 col-form-label">Birthday</label>
-                                        <div className="col-sm-10">
-                                          <input type="date" className="form-control" id="inputBirthday" name="birthday" placeholder="2018-01-01"></input>
-                                        </div>
-                                    </div>
-
-                                    <div className="form-group row">
-                                        <label htmlFor="inputAnniversary" className="col-sm-2 col-form-label">Anniversary</label>
-                                        <div className="col-sm-10">
-                                          <input type="date" className="form-control" id="inputAnniversary" name="anniversary" placeholder="2018-01-01"></input>
-                                        </div>
-                                    </div>
-
-                                    <div className="form-group row">
-                                        <label htmlFor="uploadPhoto" className="col-sm-2 col-form-label">Choose your photo</label>
-                                        <div className="col-sm-10">
-                                            <input type="file" className="form-control-file" id="uploadPhoto" name="photo"></input>
-                                        </div>
-                                    </div>
-
-                                    <div className="form-group row">
-                                        <label htmlFor="uploadPhoto" className="col-sm-2 col-form-label">Choose your partner's photo</label>
-                                        <div className="col-sm-10">
-                                            <input type="file" className="form-control-file" id="uploadPhoto2" name="photo_couple"></input>
-                                        </div>
-                                    </div>
-
-                                    <button className="btn btn-default btn-lg offset-10" type="submit" name="action">Submit</button>
                                 </form>                             
                             </div>                        
                         </div>                   

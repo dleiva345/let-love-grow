@@ -298,21 +298,22 @@ export class Mypage extends Component {
                                         photo={this.state.photo}
                                         photo_couple={this.state.photo_couple}/>
 
-                           
-                            <Album  couple_key={this.state.couple_key}
-                                    albums={this.state.albums}
-                                    last_one={this.state.last_one}
-                                    fetchAlbum={this.fetchAlbum} 
-                                    handleChange={this.handleChange} />
-                        
-                        </div>
-
-                        <div className='m-0 col-4'>
-                            <Mood   couple_key={this.state.couple_key}
+                           <Mood   couple_key={this.state.couple_key}
                                     mood_me={this.state.mood_me}
                                     mood_partner={this.state.mood_partner}
                                     handleClick={this.handleClick}
                                     fetchMood={this.fetchMood} />
+                            
+                        
+                        </div>
+
+                        <div className='m-0 col-4'>
+                            <Album  couple_key={this.state.couple_key}
+                                    albums={this.state.albums}
+                                    last_one={this.state.last_one}
+                                    fetchAlbum={this.fetchAlbum} 
+                                    handleChange={this.handleChange} /> 
+                            
                             
                             <Messages first_name={this.state.first_name}
                                       messages={this.state.messages}
