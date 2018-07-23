@@ -297,10 +297,10 @@ export class Start extends Component {
                                         </div>
 
                                         <div className="form-group row">
-                                            <label htmlFor="uploadPhoto" className="col-sm-2 col-form-label">Choose your partner's photo</label>
+                                            <label htmlFor="uploadPhoto" className="col-sm-2 col-form-label">Choose couple photo</label>
                                             <div className="col-sm-10">
                                                 <input type="file" className="form-control-file" id="uploadPhoto2" name="photo_couple"></input>
-                                            </div>
+                                            </div> 
                                         </div>
                                     </div>
 
