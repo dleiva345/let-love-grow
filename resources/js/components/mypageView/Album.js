@@ -3,7 +3,7 @@ import React from 'react'
 export const Album = ({couple_key, albums, last_one, fetchAlbum}) => (
     <div id='album'>
     
-      <div className='card-header p-2 border mt-1 d-flex justify-content-between'  data-toggle="modal" data-target="#albumModal"> <div>Album</div><div className="btn btn-sm btn-default text-white">add</div></div>
+      <div className='card-header p-2 border mt-1 d-flex justify-content-between'  data-toggle="modal" data-target="#albumModal"> <div>Album + </div></div>
 
         <div className="modal fade" id="albumModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-lg" role="document">

@@ -6,8 +6,15 @@ import AboutPic2 from '../../images/about-inset.jpg'
 import Staff1 from '../../images/staff-01.jpg'
 import Staff2 from '../../images/staff-02.jpg'
 import Staff3 from '../../images/staff-03.jpg'
+import Bloom from '../../images/leaves-pattern.png'
 import '../../css/style.css'
 import '../../css/responsive.css'
+
+var sectionStyle = {
+    width: "100%",
+    height: "400px",
+    backgroundImage: "url(" + { Bloom } + ")"
+};
 
 export class Start extends Component {
     constructor(props) {
@@ -61,8 +68,7 @@ export class Start extends Component {
 
     render() {
         return (
-        <div>
-
+        <div style={ sectionStyle } class="whole"> 
             <nav className="navbar navbar-expand-lg default-color sticky-top lighten-4 justify-content-between">
                 <a className="navbar-brand" href="#"><img src={Logo} height="50" /></a>
                 <div>
@@ -77,11 +83,12 @@ export class Start extends Component {
                                 <a className="nav-link navmenu" href="#about">About Us</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link navmenu" href="#our_team">Team</a>
-                            </li>
-                            <li className="nav-item">
                                 <a className="nav-link navmenu" href="#signup">Sign Up</a>
                             </li>
+                            <li className="nav-item">
+                                <a className="nav-link navmenu" href="#our_team">Team</a>
+                            </li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -95,19 +102,17 @@ export class Start extends Component {
                                 <div className="banner-cell">
 
                                     <img src={Logo} height="150" />
-                                    
+                                    <br /> <br />
                                     <form className= 'mb-5 col-6 offset-3' onSubmit={this.handleSubmit}  method='POST'>
                                         <div className='container row offset-1'>
                                             <div className="form-group mr-2">
-                                              <label htmlFor="email">Email address</label>
-                                              <input type="email" className="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email"
+                                              <input type="email" className="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email"
                                                      onChange={this.handleChange}
                                                      required>
                                                     </input>
                                             </div>
 
                                             <div className="form-group">
-                                              <label htmlFor="password">Password</label>
                                               <input type="password" className="form-control" id="password" name="password" placeholder="Password"
                                                      onChange={this.handleChange}
                                                      required>
@@ -156,76 +161,6 @@ export class Start extends Component {
             </div>
 
 
-
-            <div id="our_team" className="team-main pad-top-100 pad-bottom-100 parallax">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                                <h2 className="h2 text-white text-center">Our Team</h2>
-                                <p className="title-caption text-center">We are a cross-functional team of ladies with diverse skills and interests that allow us to deliver beautiful, complex and relevant products. Indeed, the whole is greater than the sum of its parts. </p>
-                            </div>
-                            <div className="team-box">
-                
-                                <div className="row">
-                                    <div className="col-md-4 col-sm-6">
-                                        <div className="sf-team">
-                                            <div className="thumb">
-                                                <a href="#"><img src={Staff1} /></a>
-                                            </div>
-                                            <div className="text-col">
-                                                <h3>Jin Kim</h3>
-                                                <p>Back-end Guru</p>
-                                                <ul className="team-social">
-                                                    <li><a href="http://www.github.com/jinkkim"><i className="fa fa-github-square" aria-hidden="true"></i></a></li>
-                                                    <li><a href="https://www.instagram.com/k9.cookie"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                                    <li><a href="https://www.linkedin.com/jinkingkim"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-4 col-sm-6">
-                                        <div className="sf-team">
-                                            <div className="thumb">
-                                                <a href="#"><img src={Staff2} /></a>
-                                            </div>
-                                            <div className="text-col">
-                                                <h3>Marika Manuud</h3>
-                                                <p>Project Manager</p>
-                                                <ul className="team-social">
-                                                    <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                                    <li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                                    <li><a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-4 col-sm-6">
-                                        <div className="sf-team">
-                                            <div className="thumb">
-                                                <a href="#"><img src={Staff3} /></a>
-                                            </div>
-                                            <div className="text-col">
-                                                <h3>Debbie Leiva</h3>
-                                                <p>UI/UX Captain</p>
-                                                <ul className="team-social">
-                                                    <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                                    <li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                                    <li><a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                
-                            </div>                
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
             <div id="signup" className="reservations-main pad-top-100 pad-bottom-100">
                 <div className="container">
                     <div className="row">
@@ -235,12 +170,9 @@ export class Start extends Component {
                                     <h2 className="text-default text-center h2">Sign Up</h2>
                                 </div>
                                 <h4 class="form-title">LET'S KEEP YOUR LOVE GROWING</h4>
-
-                                <p> PLEASE FILL OUT ALL REQUIRED* FIELDS. THANKS! </p>
                 
                                 <form className='col-10 offset-1' autoComplete="off" action='/signup' method='POST'>
                                     <div>
-                                        <small className="form-text text-muted">*required</small>
                                         <div className="form-group row" >
                                           <label htmlFor="inputEmail" className="col-sm-2 col-form-label">Email*</label>
 
@@ -268,42 +200,36 @@ export class Start extends Component {
                                             </div>
                                         </div>
 
-                                        <div className="form-group row">
-                                            <label htmlFor="inputCoupleID" className="col-sm-2 col-form-label">Couple Key</label>
-                                            <div className="col-sm-10">
-                                              <input type="text" className="form-control" id="inputCoupleID" name="coupleKey" placeholder="If your partner has one..."></input>
+                                        <div className="form-row">
+                                            <div className="form-group col-md-6">
+                                                <label htmlFor="inputBirthday" >Birthday</label>
+                                                <input type="date" className="form-control" id="inputBirthday" name="birthday" placeholder="2018-01-01"></input>
+                                            </div>
+
+                                            <div className="form-group col-md-6">
+                                                <label htmlFor="inputAnniversary" >Anniversary</label>
+                                                <input type="date" className="form-control" id="inputAnniversary" name="anniversary" placeholder="2018-01-01"></input>
                                             </div>
                                         </div>
-
                                         <div className="form-group row">
-                                            <label htmlFor="inputBirthday" className="col-sm-2 col-form-label">Birthday</label>
+                                            <label htmlFor="inputCoupleID" className="col-sm-2 col-form-label"> Lovers Key</label>
                                             <div className="col-sm-10">
-                                              <input type="date" className="form-control" id="inputBirthday" name="birthday" placeholder="2018-01-01"></input>
+                                              <input type="text" className="form-control" id="inputCoupleID" name="coupleKey" placeholder="Enter if your partner invited you"></input>
                                             </div>
                                         </div>
-
-                                        <div className="form-group row">
-                                            <label htmlFor="inputAnniversary" className="col-sm-2 col-form-label">Anniversary</label>
-                                            <div className="col-sm-10">
-                                              <input type="date" className="form-control" id="inputAnniversary" name="anniversary" placeholder="2018-01-01"></input>
-                                            </div>
-                                        </div>
-
-                                        <div className="form-group row">
-                                            <label htmlFor="uploadPhoto" className="col-sm-2 col-form-label">Choose your photo</label>
-                                            <div className="col-sm-10">
+                                        <div className="form-row">
+                                            <div className="form-group col-md-6">
+                                                <label htmlFor="uploadPhoto">Your photo</label>
                                                 <input type="file" className="form-control-file" id="uploadPhoto" name="photo"></input>
                                             </div>
-                                        </div>
 
-                                        <div className="form-group row">
-                                            <label htmlFor="uploadPhoto" className="col-sm-2 col-form-label">Choose couple photo</label>
-                                            <div className="col-sm-10">
+                                            <div className="form-group col-md-6" >
+                                                <label htmlFor="uploadPhoto">Your partner photo</label>
                                                 <input type="file" className="form-control-file" id="uploadPhoto2" name="photo_couple"></input>
-                                            </div> 
+                                            </div>
                                         </div>
                                     </div>
-
+                                    <br />
                                     <div className="container d-flex justify-content-center">
                                         <button className="btn btn-default" type="submit" name="action">Grow Baby Grow!</button>
                                     </div>
@@ -313,7 +239,59 @@ export class Start extends Component {
                     </div>                 
                 </div>           
             </div>           
+
+            <div id="our_team" className="team-main pad-top-100 pad-bottom-100 parallax">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                                <h2 className="h2 text-white text-center">Our Team</h2>
+                                <p className="title-caption text-center">We are a cross-functional team of ladies with diverse skills and interests that allow us to deliver beautiful, complex and relevant products. Indeed, the whole is greater than the sum of its parts. </p>
+                            </div>
+                            <div className="team-box">
                 
+                                <div className="row">
+                                    <div className="col-md-4 col-sm-6">
+                                        <div className="sf-team">
+                                            <div className="thumb">
+                                                <a href="#"><img src={Staff1} /></a>
+                                            </div>
+                                            <div className="text-col">
+                                                <h3>Jin Kim</h3>
+                                                <p>Back-end Guru</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-4 col-sm-6">
+                                        <div className="sf-team">
+                                            <div className="thumb">
+                                                <a href="#"><img src={Staff2} /></a>
+                                            </div>
+                                            <div className="text-col">
+                                                <h3>Marika Manuud</h3>
+                                                <p>Project Manager</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-4 col-sm-6">
+                                        <div className="sf-team">
+                                            <div className="thumb">
+                                                <a href="#"><img src={Staff3} /></a>
+                                            </div>
+                                            <div className="text-col">
+                                                <h3>Debbie Leiva</h3>
+                                                <p>UI/UX Captain</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                
+                            </div>                
+                        </div>
+                    </div>
+                </div>
+            </div>   
         </div>
         )
     }

@@ -298,21 +298,22 @@ export class Mypage extends Component {
                                         photo={this.state.photo}
                                         photo_couple={this.state.photo_couple}/>
 
-                           <Mood   couple_key={this.state.couple_key}
+                            <Mood   couple_key={this.state.couple_key}
                                     mood_me={this.state.mood_me}
                                     mood_partner={this.state.mood_partner}
                                     handleClick={this.handleClick}
                                     fetchMood={this.fetchMood} />
-                            
+                               
                         
                         </div>
 
                         <div className='m-0 col-4'>
+                            
                             <Album  couple_key={this.state.couple_key}
-                                    albums={this.state.albums}
-                                    last_one={this.state.last_one}
-                                    fetchAlbum={this.fetchAlbum} 
-                                    handleChange={this.handleChange} /> 
+                                        albums={this.state.albums}
+                                        last_one={this.state.last_one}
+                                        fetchAlbum={this.fetchAlbum} 
+                                        handleChange={this.handleChange} /> 
                             
                             
                             <Messages first_name={this.state.first_name}
@@ -324,7 +325,7 @@ export class Mypage extends Component {
                         </div>
 
                         <div className='m-0 col-4'>
-                            <div className='card-header p-2 border mt-1 d-flex justify-content-between'  data-toggle="modal" data-target="#historyAddModal"> <div>Upcoming Events</div><div className="btn btn-sm btn-default text-white">add</div></div>
+                            <div className='card-header p-2 border mt-1 d-flex justify-content-between'  data-toggle="modal" data-target="#historyAddModal"> <div>Upcoming Events + </div></div>
                                 <History couple_key={this.state.couple_key} />
                             <div className='card-body border '>
                                 <Calendar renderDay={this.renderDay} />
