@@ -76,7 +76,7 @@ export const Album = ({couple_key, albums, last_one, fetchAlbum}) => (
                                             <p className="card-title mb-0">{album.date.substring(0,10)}</p>
                                             <p className="card-text">{album.descr}</p>
                                             <div className="d-flex justify-content-around">
-                                                <button className="btn btn-sm btn-default" data-toggle="modal" data-target="#albumModify">Modify</button>
+                                                <button className="btn btn-sm btn-default" data-toggle="modal" data-target="#albumModify">Edit</button>
 
                                                 <div className="modal fade" id="albumModify" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                 <div className="modal-dialog modal-dialog-centered" role="document">
@@ -133,7 +133,7 @@ export const Album = ({couple_key, albums, last_one, fetchAlbum}) => (
 
 
                                                 <form action= {'/albumDelete/'+ album._id} method = "post">
-                                                    <button type="submit" className="btn btn-sm btn-danger" id={album._id} 
+                                                    <button type="submit" className="btn btn-sm btn-secondary" id={album._id} 
                                                             data-toggle="modal" data-target="#deleteConfirmModal">Delete
                                                     </button>
                                                 </form>

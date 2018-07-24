@@ -270,7 +270,7 @@ export class Start extends Component {
                                             </div>
                                             <div className="text-col">
                                                 <h3>Marika Manuud</h3>
-                                                <p>Project Manager</p>
+                                                <p>Project Manager and Copywriter</p>
                                             </div>
                                         </div>
                                     </div>
